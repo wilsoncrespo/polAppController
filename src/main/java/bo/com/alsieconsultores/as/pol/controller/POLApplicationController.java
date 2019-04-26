@@ -7,7 +7,7 @@ import bo.com.alsieconsultores.as.pol.model.POLApplicationResume;
 public class POLApplicationController {
     private POLApplication polApplication;
     private String referenceNumber;
-    private ReferenceNumberGenerator referenceNumberGenerator = new ReferenceNumberGenerator();
+    private ReferenceNumberGeneratorImpl referenceNumberGenerator = new ReferenceNumberGeneratorImpl();
 
     public POLApplicationController(POLApplication polApplication) {
         this.referenceNumber = referenceNumberGenerator.getReferenceNumber();
