@@ -3,11 +3,12 @@ package bo.com.alsieconsultores.as.pol.controller;
 import bo.com.alsieconsultores.as.pol.model.POLApplication;
 import bo.com.alsieconsultores.as.pol.model.POLApplicationPersonalInfo;
 import bo.com.alsieconsultores.as.pol.model.POLApplicationResume;
+import bo.com.alsieconsultores.as.pol.producer.POLApplicationProducer;
 
 public class POLApplicationController {
     private POLApplication polApplication;
     private String referenceNumber;
-    private POLApplicationP
+    private POLApplicationProducer polApplicationProducer;
     private ReferenceNumberGeneratorImpl referenceNumberGenerator = new ReferenceNumberGeneratorImpl();
 
     public POLApplicationController(POLApplication polApplication) {
@@ -23,6 +24,7 @@ public class POLApplicationController {
 
     public void savePOLApplication() {
         //TODO call to the polApplicationProducer instance with the polApplication instance loaded and ready to be saved
-
+        // TODO create a new instance of polApplicationProducer for sending the personal information and the resume
+        // file in PDF format
     }
 }
