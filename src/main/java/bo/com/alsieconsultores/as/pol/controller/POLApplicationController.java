@@ -8,7 +8,6 @@ import bo.com.alsieconsultores.as.pol.producer.POLApplicationProducer;
 public class POLApplicationController {
     private POLApplication polApplication;
     private String referenceNumber;
-    private POLApplicationProducer polApplicationProducer;
     private ReferenceNumberGeneratorImpl referenceNumberGenerator = new ReferenceNumberGeneratorImpl();
 
     public POLApplicationController(POLApplication polApplication) {
@@ -22,9 +21,12 @@ public class POLApplicationController {
         polApplicationResume.setReferenceNumber(referenceNumber);
     }
 
-    public void savePOLApplication() {
+    public void savePOLApplication(POLApplication polApplication) {
         //TODO call to the polApplicationProducer instance with the polApplication instance loaded and ready to be saved
         // TODO create a new instance of polApplicationProducer for sending the personal information and the resume
         // file in PDF format
+        POLApplicationProducer polApplicationProducer = new POLApplicationProducer();
+        polApplicationProducer.savePersonalInfo(polApplication);
+        polApplicationProducer.storeResume(polApplication);
     }
 }
